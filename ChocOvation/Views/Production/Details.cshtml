@@ -1,0 +1,58 @@
+﻿@model ChocOvation.Models.Production
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Production</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manager.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manager.FullName)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.FactoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FactoryId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfProduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfProduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemsProducedPerDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemsProducedPerDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FixedCosts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FixedCosts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ChocOvation.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Final Products</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BarCode)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.ChocoCategory.ChocoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationDepartment.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Production.ProductionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfProduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightPerItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricePerItem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChocoCategory.ChocoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestinationDepartment.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Production.ProductionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfProduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightPerItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricePerItem)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BarCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BarCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BarCode })
+        </td>
+    </tr>
+}
+
+</table>

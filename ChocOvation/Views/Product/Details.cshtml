@@ -1,0 +1,66 @@
+﻿@model ChocOvation.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChocoCategory.ChocoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChocoCategory.ChocoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationDepartment.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationDepartment.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Production.ProductionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Production.ProductionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfProduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfProduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightPerItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightPerItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricePerItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricePerItem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BarCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

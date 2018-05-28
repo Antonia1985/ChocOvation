@@ -1,0 +1,68 @@
+﻿@model List<ChocOvation.ViewModels.OfferFormViewModel>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="height:50px; padding-left:200px">Create Your Offer</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container ">
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="container">
+            <div class="row  items">
+                <div class="item col-md-4">
+                    <h4>Material Name</h4>
+                </div>
+                <div class="item col-md-4">
+                    <h4>Quality</h4>
+                </div>
+                <div class="item col-md-4">
+                    <h4>Price</h4>
+                </div>
+               
+                @{  for (int x = 0; x < Model.Count(); x++)
+                    {
+                        <div class="item col-md-4" , name="MaterialName">                                                 
+                            @Html.TextBoxFor(m => Model[x].MaterialName, new {@readonly="readonly", @class = "form-control", autofocus = "autofocus" })
+                        </div>
+                        <div class="item col-md-4" , name="Quality">
+                            @Html.EnumDropDownListFor(m => Model[x].Quality, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => Model[x].Quality, String.Empty, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="item col-md-4">
+                            <div class="input type=" text" name="PricePerKg" col-sm-3 col-md-6">
+                                @Html.TextBoxFor(m => Model[x].PricePerKg, new { @class = "form-control", autofocus = "autofocus" })
+                                @Html.ValidationMessageFor(m => Model[x].PricePerKg, String.Empty, new { @class = "text-danger" })
+                            </div>
+                        </div>                        
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-offset-2 col-md-6">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+
+        <div class="col-md-offset-2 col-md-6">
+            @Html.ActionLink("Back to List", "MyOffers")
+        </div>
+    </div>
+ }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

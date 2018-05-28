@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ChocOvation.Models.Offer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfOffer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPriceQuality)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supplier.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfOffer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPriceQuality)
+        </td>
+
+
+        
+
+            @{  var check = ViewBag.checkRole;
+
+
+                if (check)
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OfferID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.OfferID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.OfferID })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.OfferID }) 
+                        @*@Html.ActionLink("Select", "Create", "Order", new { id = item.OfferID }, htmlAttributes: new { @class = "" })*@
+                    </td>
+                }
+
+
+
+            }
+    </tr>
+}
+
+</table>

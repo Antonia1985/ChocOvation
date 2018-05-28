@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ChocOvation.Models.Production>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Daily Production</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            Manager
+            @*@Html.DisplayNameFor(model => model.Manager.FullName)*@
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.FactoryId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfProduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemsProducedPerDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FixedCosts)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manager.FullName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.FactoryId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfProduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemsProducedPerDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FixedCosts)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductionID })
+        </td>
+    </tr>
+}
+
+</table>

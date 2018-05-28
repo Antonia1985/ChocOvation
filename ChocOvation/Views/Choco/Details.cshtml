@@ -1,0 +1,40 @@
+﻿@model ChocOvation.ViewModels.ChocoDoseViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<hr />
+<div>
+    <h4>@Model.Choco.ChocoName</h4>
+
+    <table class="table">        
+        <tr>
+            <th>
+                Material Name@*@Html.DisplayNameFor(model => model.DosesViewModel.MaterialName)*@
+            </th>
+            <th>
+                Quantity / 100gr@*@Html.DisplayNameFor(model => model.QuantityPer100gr)*@
+            </th>
+        </tr>
+        @foreach (var item in Model.DosesViewModel){
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.MaterialName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.QuantityPer100gr)
+                </td>
+            </tr>
+        }  
+        </table>
+    <br />
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Choco.ChocoID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Choco.ChocoID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    </div>
+
+   

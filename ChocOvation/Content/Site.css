@@ -1,0 +1,74 @@
+﻿/*@font-face {
+	font-family: Ultra-Regular;
+	src: url('../fonts/Ultra-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: Courgette-Regular;
+	src: url('../fonts/Courgette-Regular.ttf') format('truetype');
+}
+
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+	max-width: 280px;
+}*/ /*/
+
+.navbar-inverse {
+	background-image: url("tra.png");
+	border-color: transparent;
+	background-color: transparent;
+}
+
+.navbar {
+	min-height: 140px;
+}
+
+.body-content {
+	padding-top: 25px;
+}
+
+body {
+	font-family: Courgette-Regular, Ultra-Regular, serif, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}*/
+
+body h2 {
+    margin: 50px 0 35px;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    width: 50%;
+}
+.dropdown-menu {
+    background-color: rgba(128, 128, 128, 0.7);
+    
+}
+ul.show > li:nth-child(2) > a:nth-child(1) a:hover {
+    color: #42dca3;
+}
+body  {
+    color: chocolate;
+}
+body h2 {
+        margin: 100px 0 35px;
+}

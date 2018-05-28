@@ -1,0 +1,42 @@
+﻿@model ChocOvation.ViewModels.DoseFormViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DosePerMaterial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChocoID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChocoID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityPer100gr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityPer100gr)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit") |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

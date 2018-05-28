@@ -1,0 +1,82 @@
+﻿@model ChocOvation.Models.ChocoStore
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Daily Report</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreName)
+        </th>
+        @*<th>
+            Manager
+            @Html.DisplayNameFor(model => model.Manager.FullName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        @*
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </th>*@
+        <th>
+            Items Sold Today
+            @*@Html.DisplayNameFor(model => model.NumberofProductsSoldToday)*@
+        </th>
+        <th>
+            Stock
+            @*@Html.DisplayNameFor(model => model.TodaysStock)*@
+        </th>
+        <th>
+            Profit
+            @*@Html.DisplayNameFor(model => model.TodaysProfit)*@
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.StoreName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(model => model.Manager.FullName)
+        </td>*@
+        <td>
+            @Html.DisplayFor(model => model.Date)
+        </td>
+        @*
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentID)
+        </td>*@
+        <td>
+            @Html.DisplayFor(model => model.NumberofProductsSoldToday)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TodaysStock)
+        </td>
+        <td>
+            @Html.DisplayFor(model=> model.TodaysProfit)
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+<p>
+    @Html.ActionLink("Home", "Index", "Home")
+</p>

@@ -1,0 +1,30 @@
+﻿@model ChocOvation.Models.Supplier
+
+@{
+    ViewBag.Title = "Offers";
+}
+
+<h2>Offers</h2>
+
+<div>
+    <h4>@Model.FullName</h4>
+    <hr />
+        <ul >
+                @{
+                    foreach (var offer in Model.Offers)
+                    {
+                        <li>
+                            <div><b>Date of Offer: </b>@offer.DateOfOffer.ToString("dd MMM yyyy")</div>
+                            <div><b> Index of Quality/Price: </b>@offer.TotalPriceQuality</div>                            
+                            <div>
+                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+                                @Html.ActionLink("Details", "Details", "Offer", new { id = offer.OfferID}, htmlAttributes: new { @class = "" }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+                        </li>
+                    }
+                }
+        </ul>
+       
+</div>
+

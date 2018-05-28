@@ -1,0 +1,46 @@
+﻿@*@model IEnumerable<ChocOvation.ViewModels.SoldTodaysProductsViewModel>*@
+@model IEnumerable<ChocOvation.Models.SoldProduct>
+
+@{
+    ViewBag.Title = "ProductSoldToday";
+}
+
+<h2>Products Sold Today</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.BarCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ChocoCategory.ChocoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.PricePerItem)
+        </th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.BarCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ChocoCategory.ChocoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.PricePerItem)
+            </td>            
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Index", "Index")
+</div>
+
+
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ChocOvation.Models.Offer>
+
+@{
+    ViewBag.Title = "MyOffers";
+}
+
+<h2>My Offers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>        
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfOffer)
+        </th>
+        <th>
+            Index Of Quality/Price          
+        </th>
+        @*<th>
+            Offer Per Material
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfOffer)
+        </td>
+        <td>            
+            @Html.DisplayFor(modelItem => item.TotalPriceQuality)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DateOfOffer)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OfferID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OfferID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OfferID })
+        </td>
+    </tr>
+}
+
+</table>

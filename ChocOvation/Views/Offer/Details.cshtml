@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ChocOvation.Models.OfferPerMaterial>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+    <h4>Offer</h4>
+    <hr />
+
+    
+        @*<dt>
+            @Html.DisplayNameFor(model => model.SupplierID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierID)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.DateOfOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => model.)
+        </dd>*@
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <h5><b>Material Name</b></h5>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material.MaterialName)
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    <h5><b>Quality</b></h5>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Material.Quality)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h5><b>Price Per Kilo</b></h5>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerKg)
+                </td>
+
+            </tr>
+            <tr style="border-bottom:double" >
+                <td>
+                   <h5> <b>Price/Quality</b></h5>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceQuality)
+                </td>
+
+            </tr>
+            
+
+
+                }
+
+</table>
+
+<p>
+    @{  var check = ViewBag.checkRole;
+        var supplierid = ViewBag.supID;
+
+
+        if (check)
+        {
+            @Html.ActionLink("Back to List", "MyOffers")                                                         
+        }
+        else
+        {
+            @Html.ActionLink("Back to list", "Index", "Offer"@*, new { id = supplierid }, htmlAttributes: new { @class = "" }*@)
+        }
+
+    }
+    
+</p>

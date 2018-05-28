@@ -1,0 +1,82 @@
+﻿@model List<ChocOvation.ViewModels.OrderFormViewModel>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="padding-left:200px">Create Your Order!</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container ">
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="container">
+            <div class="row  items">
+                <div class="item col-sm-2">
+                    <h4>Order ID</h4>
+                </div>
+                <div class="item col-sm-2">
+                    <h4>Material ID</h4>
+                </div>
+                <div class="item col-sm-3">
+                    <h4>Material Name</h4>
+                </div>
+                <div class="item col-sm-2">
+                    <h4>Quantity</h4>
+                </div>                
+                <div class="item col-sm-1"></div>
+                <div class="item col-sm-2">
+                    <h4>Price</h4>
+                </div>
+
+                @{  for (int x = 0; x < Model.Count(); x++)
+                    {
+                        <div class="item col-sm-2" , name="OrderID">
+                            @Html.TextBoxFor(m => Model[x].OrderID, new { @readonly = "readonly", @class = "form-control", autofocus = "autofocus" })
+                        </div>
+                        <div class="item col-sm-2" , name="MaterialID">
+                            @Html.TextBoxFor(m => Model[x].MaterialID, new { @readonly = "readonly", @class = "form-control", autofocus = "autofocus" })
+                        </div>
+                        <div class="item col-sm-3" , name="MaterialName">                          
+                            @Html.TextBoxFor(m => Model[x].MaterialName, new { @readonly = "readonly", @class = "form-control", autofocus = "autofocus" })                            
+                        </div>
+                        
+                        <div class="item col-sm-2">
+                            <div class="input type=" text" name="QuantityPerYear" col-sm-3 col-md-4">
+                                @Html.TextBoxFor(m => Model[x].QuantityPerYear, new { @class = "form-control", autofocus = "autofocus" }) 
+                                @Html.ValidationMessageFor(m => Model[x].QuantityPerYear, String.Empty, new { @class = "text-danger" })
+                            </div>                            
+                        </div>
+                        <div class="item col-sm-1">gr</div>
+                        <div class="item col-sm-2" , name="Price">
+                            @Html.TextBoxFor(m => Model[x].Price, new { @readonly = "readonly", @class = "form-control", autofocus = "autofocus" })
+                        </div>
+
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-offset-2 col-md-6">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+
+        <div class="col-md-offset-2 col-md-6">
+            @Html.ActionLink("Back to List", "Index", "Offer")
+        </div>
+    </div>
+ }
+
+    @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

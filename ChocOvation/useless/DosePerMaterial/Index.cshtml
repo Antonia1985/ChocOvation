@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ChocOvation.Models.DosePerMaterial>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Choco.ChocoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Material.MaterialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityPer100gr)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Choco.ChocoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Material.MaterialName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityPer100gr)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DosePerMaterialID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.DosePerMaterialID }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.DosePerMaterialID })
+        </td>
+    </tr>
+}
+
+</table>
